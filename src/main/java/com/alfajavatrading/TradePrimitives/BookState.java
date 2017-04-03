@@ -14,13 +14,16 @@ public class BookState {
     private TradeInstrument instrument;
     private double bestAskPrice, bestBidPrice;
     private double bestAskVolume, bestBidVolume;
-    private Timestamp onDate;
+    private Timestamp onDate = null;
     private int bookSize = 1;
-    private double[] askPricesArray; 
-    private double[] askPricesVolumes; 
-    private double[] bidPricesArray; 
-    private double[] bidPricesVolumes;
-    private String customField;
+    private double[] askPricesArray = new double[1];
+    private double[] askPricesVolumes = new double[1];
+    private double[] bidPricesArray = new double[1];
+    private double[] bidPricesVolumes = new double[1];
+    private String customField = null;
+
+    public BookState() {
+    }
 
     public int getBookSize() {
         return bookSize;
