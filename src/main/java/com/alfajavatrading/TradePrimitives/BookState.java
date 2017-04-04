@@ -16,10 +16,10 @@ public class BookState {
     private double bestAskVolume, bestBidVolume;
     private Timestamp onDate = null;
     private int bookSize = 1;
-    private double[] askPricesArray = new double[1];
-    private double[] askPricesVolumes = new double[1];
-    private double[] bidPricesArray = new double[1];
-    private double[] bidPricesVolumes = new double[1];
+    private double[] askPrices = new double[1];
+    private double[] askVolumes = new double[1];
+    private double[] bidPrices = new double[1];
+    private double[] bidVolumes = new double[1];
     private String customField = null;
 
     public BookState() {
@@ -32,24 +32,24 @@ public class BookState {
     public void setBookSize(int bookSize) {
         if ( bookSize > 0 && bookSize != this.bookSize ) {
             this.bookSize = bookSize;
-            askPricesArray = askPricesVolumes = bidPricesArray = bidPricesVolumes = new double[bookSize];
+            askPrices = askVolumes = bidPrices = bidVolumes = new double[bookSize];
         }    
     }
 
-    public double[] getAskPricesArray() {
-        return askPricesArray;
+    public double[] getAskPrices() {
+        return askPrices;
     }
 
-    public double[] getAskPricesVolumes() {
-        return askPricesVolumes;
+    public double[] getAskVolumes() {
+        return askVolumes;
     }
 
-    public double[] getBidPricesArray() {
-        return bidPricesArray;
+    public double[] getBidPrices() {
+        return bidPrices;
     }
 
-    public double[] getBidPricesVolumes() {
-        return bidPricesVolumes;
+    public double[] getBidVolumes() {
+        return bidVolumes;
     }
     
     
