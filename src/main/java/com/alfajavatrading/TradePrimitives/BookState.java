@@ -32,7 +32,10 @@ public class BookState {
     public void setBookSize(int bookSize) {
         if ( bookSize > 0 && bookSize != this.bookSize ) {
             this.bookSize = bookSize;
-            askPrices = askVolumes = bidPrices = bidVolumes = new double[bookSize];
+            askPrices = new double[bookSize];
+            askVolumes = new double[bookSize];
+            bidPrices = new double[bookSize];
+            bidVolumes = new double[bookSize];
         }    
     }
 
