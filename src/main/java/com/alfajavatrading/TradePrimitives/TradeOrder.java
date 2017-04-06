@@ -29,7 +29,7 @@ public class TradeOrder {
         this.orderType = orderType;
         this.price = price;
         this.amount = amount;
-        this.orderState = OrderState.Placed;
+        this.orderState = OrderState.Processing;
     }
 
     public TradeInstrument getInstrument() {
