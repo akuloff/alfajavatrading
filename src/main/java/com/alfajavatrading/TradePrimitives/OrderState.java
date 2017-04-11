@@ -13,5 +13,6 @@ public enum OrderState {
     Partial, 
     Filled, 
     Processing,
+    Failed,
     Expired;
 }
