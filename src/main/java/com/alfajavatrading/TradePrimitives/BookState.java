@@ -4,13 +4,14 @@
 
 package com.alfajavatrading.TradePrimitives;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  *
  * @author kulikov
  */
-public class BookState {
+public class BookState implements Serializable{
     private TradeInstrument instrument;
     private double bestAskPrice, bestBidPrice;
     private double bestAskVolume, bestBidVolume;
