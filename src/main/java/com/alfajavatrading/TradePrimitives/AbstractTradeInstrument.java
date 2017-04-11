@@ -1,9 +1,11 @@
 package com.alfajavatrading.TradePrimitives;
 
+import java.io.Serializable;
+
 /**
  * Created by kulikov on 28/12/2016.
  */
-public class AbstractTradeInstrument {
+public class AbstractTradeInstrument implements Serializable{
   private BookState bookState = new BookState();
 
   /**

@@ -5,11 +5,13 @@
  */
 package com.alfajavatrading.TradePrimitives;
 
+import java.io.Serializable;
+
 /**
  *
  * @author kulikov
  */
-public enum TradeType {
+public enum TradeType{
     Buy, Sell;
 
     public TradeType opposite(){

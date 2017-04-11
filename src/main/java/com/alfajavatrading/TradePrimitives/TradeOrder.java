@@ -3,13 +3,14 @@
  */
 package com.alfajavatrading.TradePrimitives;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
  *
  * @author kulikov
  */
-public class TradeOrder {
+public class TradeOrder implements Serializable{
     private TradeInstrument instrument;
     private TradeType tradeType;
     private OrderType orderType;
@@ -18,7 +19,7 @@ public class TradeOrder {
     private Date createDate;
     private Date completeDate;
     private String customField;
-    private double amount, price, slPrice, tpPrice;
+    private double amount, price, slPrice, tpPrice, executedAmount = 0;
     private TradeOrder linkedOrder;
     private String clientOrderId;
 
@@ -155,6 +156,15 @@ public class TradeOrder {
 
     public TradeOrder setClientOrderId(String clientOrderId) {
         this.clientOrderId = clientOrderId;
+        return this;
+    }
+
+    public double getExecutedAmount() {
+        return executedAmount;
+    }
+
+    public TradeOrder setExecutedAmount(double executedAmount) {
+        this.executedAmount = executedAmount;
         return this;
     }
 }
