@@ -17,11 +17,13 @@ public class TradeOrder implements Serializable{
     private OrderState orderState;
     private String orderId;
     private Date createDate;
+    private Date placedDate;
     private Date completeDate;
     private String customField;
     private double amount, price, slPrice, tpPrice, executedAmount = 0;
     private TradeOrder linkedOrder;
     private String clientOrderId;
+    private double executedPrice;
 
     public TradeOrder(TradeInstrument instrument, OrderType orderType, TradeType tradeType, double price, double amount, Date createDate) {
         this.instrument = instrument;
@@ -165,6 +167,24 @@ public class TradeOrder implements Serializable{
 
     public TradeOrder setExecutedAmount(double executedAmount) {
         this.executedAmount = executedAmount;
+        return this;
+    }
+
+    public double getExecutedPrice() {
+        return executedPrice;
+    }
+
+    public TradeOrder setExecutedPrice(double executedPrice) {
+        this.executedPrice = executedPrice;
+        return this;
+    }
+
+    public Date getPlacedDate() {
+        return placedDate;
+    }
+
+    public TradeOrder setPlacedDate(Date placedDate) {
+        this.placedDate = placedDate;
         return this;
     }
 }
