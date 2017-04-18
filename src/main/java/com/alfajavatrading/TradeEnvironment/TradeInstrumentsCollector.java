@@ -13,7 +13,6 @@ public class TradeInstrumentsCollector {
     HashMap<String, TradeInstrument> instruments = new HashMap<>();
     HashMap<String, TradeInstrument> instruments_ids = new HashMap<>();
     HashMap<String, BookState> bookStatesForInstrument = new HashMap<>();
-    private boolean isLocked = false;
     private boolean alwaysUpdateInstrument = false;
 
     public HashMap<String, TradeInstrument> getInstruments() {
@@ -71,14 +70,5 @@ public class TradeInstrumentsCollector {
             bookStatesForInstrument.put(instrument.getSystemId(), bookState);
         }
         System.out.println("------------------------");
-    }
-
-    public synchronized boolean isLocked() {
-        return isLocked;
-    }
-
-    public synchronized TradeInstrumentsCollector setLocked(boolean locked) {
-        isLocked = locked;
-        return this;
     }
 }
