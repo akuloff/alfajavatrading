@@ -40,6 +40,14 @@ public class BookState implements Serializable{
         }    
     }
 
+    public void clearAll(){
+        bestAskPrice = bestBidPrice = bestAskVolume = bestBidVolume = 0;
+        java.util.Arrays.fill(askPrices, 0);
+        java.util.Arrays.fill(askVolumes, 0);
+        java.util.Arrays.fill(bidPrices, 0);
+        java.util.Arrays.fill(bidVolumes, 0);
+    }
+
     public double[] getAskPrices() {
         return askPrices;
     }
