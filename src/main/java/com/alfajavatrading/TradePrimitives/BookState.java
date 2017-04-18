@@ -30,7 +30,7 @@ public class BookState implements Serializable{
         return bookSize;
     }
 
-    public void setBookSize(int bookSize) {
+    public synchronized void setBookSize(int bookSize) {
         if ( bookSize > 0 && bookSize != this.bookSize ) {
             this.bookSize = bookSize;
             askPrices = new double[bookSize];
@@ -40,7 +40,7 @@ public class BookState implements Serializable{
         }    
     }
 
-    public void clearAll(){
+    public synchronized void clearAll(){
         bestAskPrice = bestBidPrice = bestAskVolume = bestBidVolume = 0;
         java.util.Arrays.fill(askPrices, 0);
         java.util.Arrays.fill(askVolumes, 0);
