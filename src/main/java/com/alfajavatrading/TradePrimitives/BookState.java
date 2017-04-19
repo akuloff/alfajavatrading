@@ -22,6 +22,7 @@ public class BookState implements Serializable{
     private double[] bidPrices = new double[1];
     private double[] bidVolumes = new double[1];
     private String customField = null;
+    private long lastUpdateSystemSequence = 0;
 
     public BookState() {
     }
@@ -124,6 +125,15 @@ public class BookState implements Serializable{
 
     public BookState setCustomField(String customField) {
         this.customField = customField;
+        return this;
+    }
+
+    public long getLastUpdateSystemSequence() {
+        return lastUpdateSystemSequence;
+    }
+
+    public BookState setLastUpdateSystemSequence(long lastUpdateSystemSequence) {
+        this.lastUpdateSystemSequence = lastUpdateSystemSequence;
         return this;
     }
 }
