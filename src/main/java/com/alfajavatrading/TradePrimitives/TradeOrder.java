@@ -4,7 +4,7 @@
 package com.alfajavatrading.TradePrimitives;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -16,16 +16,16 @@ public class TradeOrder implements Serializable{
     private OrderType orderType;
     private OrderState orderState;
     private String orderId;
-    private Date createDate;
-    private Date placedDate;
-    private Date completeDate;
+    private Timestamp createDate;
+    private Timestamp placedDate;
+    private Timestamp completeDate;
     private String customField;
     private double amount, price, slPrice, tpPrice, executedAmount = 0;
     private TradeOrder linkedOrder;
     private String clientOrderId;
     private double executedPrice;
 
-    public TradeOrder(TradeInstrument instrument, OrderType orderType, TradeType tradeType, double price, double amount, Date createDate) {
+    public TradeOrder(TradeInstrument instrument, OrderType orderType, TradeType tradeType, double price, double amount, Timestamp createDate) {
         this.instrument = instrument;
         this.tradeType = tradeType;
         this.createDate = createDate;
@@ -80,20 +80,20 @@ public class TradeOrder implements Serializable{
         return this;
     }
 
-    public Date getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 
-    public TradeOrder setCreateDate(Date createDate) {
+    public TradeOrder setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
         return this;
     }
 
-    public Date getCompleteDate() {
+    public Timestamp getCompleteDate() {
         return completeDate;
     }
 
-    public TradeOrder setCompleteDate(Date completeDate) {
+    public TradeOrder setCompleteDate(Timestamp completeDate) {
         this.completeDate = completeDate;
         return this;
     }
@@ -179,11 +179,11 @@ public class TradeOrder implements Serializable{
         return this;
     }
 
-    public Date getPlacedDate() {
+    public Timestamp getPlacedDate() {
         return placedDate;
     }
 
-    public TradeOrder setPlacedDate(Date placedDate) {
+    public TradeOrder setPlacedDate(Timestamp placedDate) {
         this.placedDate = placedDate;
         return this;
     }
