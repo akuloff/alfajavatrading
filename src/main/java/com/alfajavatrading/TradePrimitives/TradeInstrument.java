@@ -23,6 +23,10 @@ public class TradeInstrument extends AbstractTradeInstrument{
     }
 
 
+    public TradeInstrument(String code) {
+        super(code);
+    }
+
     public TradeInstrument(String name, String code) {
         super(name, code);
     }
