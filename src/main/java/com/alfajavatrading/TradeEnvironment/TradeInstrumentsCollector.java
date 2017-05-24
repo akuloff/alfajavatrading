@@ -5,11 +5,14 @@ import com.alfajavatrading.TradePrimitives.TradeInstrument;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Created by mpoke_000 on 11.03.2017.
  */
 public class TradeInstrumentsCollector {
+    private static Logger logger = Logger.getLogger(TradeInstrumentsCollector.class.getName());
+
     HashMap<String, TradeInstrument> instruments = new HashMap<>();
     HashMap<String, TradeInstrument> instruments_ids = new HashMap<>();
     HashMap<String, BookState> bookStatesForInstrument = new HashMap<>();
@@ -64,11 +67,11 @@ public class TradeInstrumentsCollector {
         bookStatesForInstrument.clear();
         for (Map.Entry<String, TradeInstrument> entry : instruments.entrySet()) {
             TradeInstrument instrument = entry.getValue();
-            System.out.println("instrument, system_id: " + instrument.getSystemId() + " |code: " + instrument.getCode() + " |description: " + instrument.getDescription());
+            logger.info("instrument, system_id: " + instrument.getSystemId() + " |code: " + instrument.getCode() + " |description: " + instrument.getDescription());
             BookState bookState = new BookState();
             bookState.setBookSize(bookSize);
             bookStatesForInstrument.put(instrument.getSystemId(), bookState);
         }
-        System.out.println("------------------------");
+        logger.info("------------------------");
     }
 }
