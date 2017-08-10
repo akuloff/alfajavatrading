@@ -20,26 +20,10 @@ public class BarsCollector {
     private TradePeriod period = null;
     private ArrayList<BarsCollector> normalizedWith = new ArrayList<>();
 
-    private double mult_coeff = 1;
-    
-    /*
-    private double[] valuesForTest;
-    public void initForTest(int priceType){
-        int i;
-        if (priceType == 0) {
-            valuesForTest = new double[barsArray.size()];
-            for(i=0; i<barsArray.size(); i++){
-                valuesForTest[i] = barsArray.get(i).getClosePrice();
-            }
-        }
-    }
-    public double getValueForTest(int i){
-        return valuesForTest[i];
-    }
-    */
+    private double multiplyCoeff = 1;
     
     public double getMultCoeff() {
-        return mult_coeff;
+        return multiplyCoeff;
     }
 
     public ArrayList<BarsCollector> getNormalizedWith() {
@@ -141,7 +125,7 @@ public class BarsCollector {
             br.setLowPrice(br.getLowPrice()*(float)multiplier);
         }
         
-        this.mult_coeff = multiplier;
+        this.multiplyCoeff = multiplier;
         return this;
     }
     
