@@ -14,21 +14,26 @@ public class Library {
    */
   public static java.util.Date getNextBarDate(java.util.Date bdate, TradePeriod tper){
     java.util.Date rval = null;
+    long addTime = 0;
     if ( tper == TradePeriod.M1) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000);
+      addTime = 60*1000;
     } else if ( tper == TradePeriod.M5) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*5);
+      addTime = 60*1000*5;
     } else if ( tper == TradePeriod.M10) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*10);
+      addTime = 60*1000*10;
     } else if ( tper == TradePeriod.M15) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*15);
+      addTime = 60*1000*15;
     } else if ( tper == TradePeriod.H1 ) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*60);
+      addTime = 60*1000*60;
     } else if ( tper == TradePeriod.D1 ) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*60*24);
+      addTime = 60*1000*60*24;
     } else if (tper == TradePeriod.W1 ) {
-      rval = new java.util.Date(bdate.getTime() + 60*1000*60*24*7);
+      addTime = 60*1000*60*24*7;
+    }
+    if (addTime > 0) {
+      rval = new java.util.Date(bdate.getTime() + addTime);
     }
     return rval;
   }
+
 }
