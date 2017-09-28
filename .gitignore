@@ -31,3 +31,4 @@ out/
 src/main/resources/
 src/test/
 target/
+lib/

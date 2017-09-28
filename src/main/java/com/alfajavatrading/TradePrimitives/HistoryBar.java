@@ -27,8 +27,9 @@ public class HistoryBar {
         return instrument;
     }
 
-    public void setInstrument(TradeInstrument instrument) {
+    public HistoryBar setInstrument(TradeInstrument instrument) {
         this.instrument = instrument;
+        return this;
     }
 
     public ArrayList getTicksArray() {
@@ -39,8 +40,9 @@ public class HistoryBar {
         return customField;
     }
 
-    public void setCustomField(String customField) {
+    public HistoryBar setCustomField(String customField) {
         this.customField = customField;
+        return this;
     }
 
     public HistoryBar(TradeInstrument instrument, Date odate) {
@@ -146,56 +148,63 @@ public class HistoryBar {
         return value;
     }
 
-    public void setValue(long value) {
+    public HistoryBar setValue(long value) {
         this.value = value;
+        return this;
     }
 
     public double getLowPrice() {
         return lowPrice;
     }
 
-    public void setLowPrice(double lowPrice) {
+    public HistoryBar setLowPrice(double lowPrice) {
         this.lowPrice = lowPrice;
+        return this;
     }
 
     public double getHighPrice() {
         return highPrice;
     }
 
-    public void setHighPrice(double highPrice) {
+    public HistoryBar setHighPrice(double highPrice) {
         this.highPrice = highPrice;
+        return this;
     }
 
     public double getOpenPrice() {
         return openPrice;
     }
 
-    public void setOpenPrice(double openPrice) {
+    public HistoryBar setOpenPrice(double openPrice) {
         this.openPrice = openPrice;
+        return this;
     }
 
     public double getClosePrice() {
         return closePrice;
     }
 
-    public void setClosePrice(double closePrice) {
+    public HistoryBar setClosePrice(double closePrice) {
         this.closePrice = closePrice;
+        return this;
     }
 
     public Date getOpenDate() {
         return openDate;
     }
 
-    public void setOpenDate(Date OpenDate) {
+    public HistoryBar setOpenDate(Date OpenDate) {
         this.openDate = OpenDate;
+        return this;
     }
 
     public Date getCloseDate() {
         return closeDate;
     }
 
-    public void setCloseDate(Date CloseDate) {
+    public HistoryBar setCloseDate(Date CloseDate) {
         this.closeDate = CloseDate;
+        return this;
     }
 
     public boolean isArtificial() {
