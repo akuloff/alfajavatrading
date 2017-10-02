@@ -8,29 +8,29 @@ package com.alfajavatrading.TradePrimitives;
  * @author kulikov
  */
 public enum TradePeriod {
-    BOOK("book"),
-    M1("m1"),
-    M5("m5"),
-    M10("m10"),
-    M15("m15"),
-    M30("m30"),
-    H1("h1"),
-    D1("d1"),
-    W1("w1");
+    BOOK(0),
+    M1(60*1000),
+    M5(60*1000*5),
+    M10(60*1000*10),
+    M15(60*1000*15),
+    M30(60*1000*30),
+    H1(60*1000*60),
+    D1(60*1000*60*24),
+    W1(60*1000*60*24*7);
 
-    private String textName;
+    private long periodMsec;
 
-    TradePeriod(String textName){
-        this.textName = textName;
+    TradePeriod(long periodMsec){
+        this.periodMsec = periodMsec;
     }
 
-    public String getTextName(){
-        return this.textName;
+    public long getPeriodMsec() {
+        return periodMsec;
     }
 
     public static TradePeriod fromString(String textName) {
         for (TradePeriod t : TradePeriod.values()) {
-            if (t.textName.equalsIgnoreCase(textName)) {
+            if (t.name().equalsIgnoreCase(textName)) {
                 return t;
             }
         }

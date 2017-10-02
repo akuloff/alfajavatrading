@@ -14,24 +14,8 @@ public class Library {
    */
   public static java.util.Date getNextBarDate(java.util.Date bdate, TradePeriod tper){
     java.util.Date rval = null;
-    long addTime = 0;
-    if ( tper == TradePeriod.M1) {
-      addTime = 60*1000;
-    } else if ( tper == TradePeriod.M5) {
-      addTime = 60*1000*5;
-    } else if ( tper == TradePeriod.M10) {
-      addTime = 60*1000*10;
-    } else if ( tper == TradePeriod.M15) {
-      addTime = 60*1000*15;
-    } else if ( tper == TradePeriod.H1 ) {
-      addTime = 60*1000*60;
-    } else if ( tper == TradePeriod.D1 ) {
-      addTime = 60*1000*60*24;
-    } else if (tper == TradePeriod.W1 ) {
-      addTime = 60*1000*60*24*7;
-    }
-    if (addTime > 0) {
-      rval = new java.util.Date(bdate.getTime() + addTime);
+    if (tper.getPeriodMsec() > 0) {
+      rval = new java.util.Date(bdate.getTime() + tper.getPeriodMsec());
     }
     return rval;
   }
